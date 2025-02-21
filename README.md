@@ -18,7 +18,7 @@
 ## Git Cloning
 1. Clone Repository:
 	```cmd
-	git clone https://github.com/notepadguyOfficial/Debian-Docker-Azerothcore-Playerbot.git
+	git clone https://github.com/BoiseComputer/WSL-Debian-Docker-Azerothcore-Playerbots-Installation.git
 	```
  
 ## WSL Installation
@@ -27,36 +27,14 @@
 	wsl --install -d Debian
 	```
 
-2. Once Installed, Export the a backup to the desired location:
-	```cmd
-	wsl --export Debian C:\Example
+2. Once installed, shutdown the service and move the install to your desired location:
+	Shutdown
+ 	```cmd
+	wsl --shutdown
 	```
-	or
+	Move
 	```cmd
-	wsl --export Debian D:\Example
-	```
-
-3. Unregister the Original Debian Image from WSL:
-	```cmd
-	wsl --unregister Debian
-	```
-
-4. Import it back into your chosen location:
-	```cmd
-	wsl --import Debian C:\Debian C:\Example\Debian.tar --version 2
-	```
-	or
-	```cmd
-	wsl --import Debian D:\Debian D:\Example\Debian.tar --version 2
-	```
-	
- - (Optional) Delete the .tar file to free space:
-	```cmd
-	Remove-Item D:\Example\Debian.tar
-	```
-5. Launch Debian:
-	```cmd
-	wsl -d Debian
+	wsl --manage Debian --move C:\Example
 	```
 
 ## Docker Installation
